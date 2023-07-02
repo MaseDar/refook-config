@@ -2,11 +2,11 @@ server:
   port: 8082
   error:
     include-message: on-param
-      whitelabel:
-        enabled: false
+    whitelabel:
+      enabled: false
     servlet:
       context-path: /api/v1/core
-      
+
 spring:
   datasource:
     url: jdbc:postgresql://localhost:5432/refook_core
@@ -17,16 +17,10 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate.ddl-auto: update
-    
-refook: 
-  ru: 
-    core: 
+
+refook:
+  ru:
+    core:
       jwtCookieName: refook_security
       jwtSecret: refookJWTSecretKey
       jwtExpirationMs: 86400000
-
-#keycloak:
-#  auth-server-url: http://localhost:8484/auth
-#  realm: my_realm
-#  resource: my_client
-#  public-client: true
