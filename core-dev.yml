@@ -24,6 +24,6 @@ refook:
       jwtCookieName: refook_security
       jwtSecret: refookJWTSecretKey
       jwtExpirationMs: 86400000
-logging:
-  file:
-    name: core.log
+# logging:
+#   file:
+#     name: core.log
