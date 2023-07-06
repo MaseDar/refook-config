@@ -1,0 +1,12 @@
+server:
+  port: 8082
+  error:
+    include-message: on-param
+    whitelabel:
+      enabled: false
+    servlet:
+      context-path: /api/v1/sea
+logging:
+  file:
+    path: ./search/log/dev/
+    name: ${logging.file.path}search.log
