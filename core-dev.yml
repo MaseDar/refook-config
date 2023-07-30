@@ -9,7 +9,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://localhost:5432/refook_core
+    url: jdbc:postgresql://core:5432/refook_core
     driver-class-name: org.postgresql.Driver
     username: superrefook
     password: refookapp
