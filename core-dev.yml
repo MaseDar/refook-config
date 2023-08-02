@@ -9,7 +9,7 @@ server:
 
 spring:
   datasource:
-    url: jdbc:postgresql://core:5432/refook_core
+    url: jdbc:postgresql://psql:5432/refook_core
     driver-class-name: org.postgresql.Driver
     username: superrefook
     password: refookapp
@@ -29,10 +29,10 @@ spring:
         provider:
           keycloak:
             user-name-attribute: preferred_username
-            issuer-uri: http://localhost:8090/realms/SpringBootExample
+            issuer-uri: http://keycloak:8090/realms/SpringBootExample
       resourceserver:
         jwt:
-          issuer-uri: http://localhost:8090/realms/SpringBootExample
+          issuer-uri: http://keycloak:8090/realms/SpringBootExample
 
 refook:
   ru:
