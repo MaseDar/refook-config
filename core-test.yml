@@ -30,8 +30,8 @@ spring:
           keycloak:
             user-name-attribute: preferred_username
             # issuer-uri: http://keycloak:8090/realms/SpringBootExample
-      resourceserver:
-        jwt:
+      # resourceserver:
+      #   jwt:
           # issuer-uri: http://keycloak:8090/realms/SpringBootExample
 
 refook:
