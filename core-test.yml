@@ -26,7 +26,7 @@ spring:
             client-id: login
             authorization-grant-type: authorization_code
             scope: openid
-            redirect-uri: http://localhost:8082/*
+            # redirect-uri: http://localhost:8082/*
         provider:
           keycloak:
             user-name-attribute: preferred_username
