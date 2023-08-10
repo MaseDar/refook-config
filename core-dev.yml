@@ -29,7 +29,7 @@ spring:
         provider:
           keycloak:
             user-name-attribute: preferred_username
-            issuer-uri: http://localhost:8090/realms/SpringBootExample123
+            issuer-uri: http://localhost:8090/realms/SpringBootExample
       resourceserver:
         jwt:
           issuer-uri: http://localhost:8090/realms/SpringBootExample123
