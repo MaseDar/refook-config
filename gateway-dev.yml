@@ -4,5 +4,5 @@ server:
 ru:
   refook:
     uri:
-      security: http://localhost:8081
-      core: http://localhost:8082
+      security: http://security.refook.ru:8081
+      core: http://core.refook.ru:8082
