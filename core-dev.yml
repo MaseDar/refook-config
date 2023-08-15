@@ -4,8 +4,8 @@ server:
     include-message: on-param
     whitelabel:
       enabled: false
-    servlet:
-      context-path: /api/v1/core
+  servlet:
+    context-path: /api/v1/core
 
 spring:
   datasource:
