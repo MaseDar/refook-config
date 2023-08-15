@@ -17,22 +17,22 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate.ddl-auto: update
-# KeyCloak
-  # security:
-  #   oauth2:
-  #     client:
-  #       registration:
-  #         keycloak:
-  #           client-id: login
-  #           authorization-grant-type: authorization_code
-  #           scope: openid
-  #       provider:
-  #         keycloak:
-  #           user-name-attribute: preferred_username
-  #           issuer-uri: http://keycloak.refook.ru:8080/realms/SpringBootExample
-  #     resourceserver:
-  #       jwt:
-  #         issuer-uri: http://keycloak.refook.ru:8080/realms/SpringBootExample
+KeyCloak
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: login
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          keycloak:
+            user-name-attribute: preferred_username
+            issuer-uri: http://keycloak.refook.ru:8080/realms/SpringBootExample
+      resourceserver:
+        jwt:
+          issuer-uri: http://keycloak.refook.ru:8080/realms/SpringBootExample
 
 refook:
   ru:
