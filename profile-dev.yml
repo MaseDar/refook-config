@@ -4,3 +4,21 @@ server:
     include-message: on-param
     whitelabel:
       enabled: false
+
+datasource:
+  driver: org.postgresql.Driver
+  jdbcUrl: jdbc:postgresql://psql:5432/refook_profile
+  username: superrefook
+  password: refookapp
+
+spring:
+  # configure spring data source
+  application:
+    name: jooq-api
+  datasource:
+    driver-class-name: ${datasource.driver}
+    url: ${datasource.jdbcUrl}
+    username: ${datasource.username}
+    password: ${datasource.password}
+  jooq:
+    sql-dialect: postgres
