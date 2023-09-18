@@ -1,9 +1,11 @@
 server:
+  forward-headers-strategy: framework
   port: 8082
   error:
     include-message: on-param
     whitelabel:
       enabled: false
+  
 
 spring:
   datasource:
@@ -17,3 +19,7 @@ logging:
   file:
     path: ./core/log/dev/
     name: ${logging.file.path}core.log
+
+springdoc:
+  swagger-ui:
+    path: docs-core.html
