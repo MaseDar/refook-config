@@ -4,4 +4,4 @@ server:
 ru:
   refook:
     uri:
-      core: http://core.refook.ru
+      core: http://core.refook.ru:8082
