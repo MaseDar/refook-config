@@ -4,4 +4,4 @@ server:
 ru:
   refook:
     uri:
-      core: https://core.refook.ru
+      core: http://core.refook.ru
