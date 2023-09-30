@@ -5,3 +5,22 @@ ru:
   refook:
     uri:
       core: http://core.refook.ru:8082
+      
+spring:
+  security:
+    oauth2:
+      client:
+        registration:
+          keycloak:
+            client-id: login
+            client-authentication-method: client_secret_post
+            authorization-grant-type: authorization_code
+            scope: openid
+        provider:
+          keycloak:
+            user-name-attribute: preferred_username
+            issuer-uri: https://refook.ru:8443/realms/SpringBootExample
+      resourceserver:
+        jwt:
+          issuer-uri: https://refook.ru:8443/realms/SpringBootExample
+          jwk-set-uri: https://refook.ru:8443/realms/SpringBootExample/protocol/openid-connect/certs
