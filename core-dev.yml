@@ -15,7 +15,17 @@ spring:
     show-sql: true
     generate-ddl: true
     hibernate.ddl-auto: update
+  kafka:
+    # Перечисляем всех наших брокеров
+    bootstrap-servers: kafka:29092
+    producer:
+      # Настраиваем сериализацию сообщений
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 
+kafka:
+  topics:
+    view-topic: view
 logging:
   file:
     path: ./core/log/dev/

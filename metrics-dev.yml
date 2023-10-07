@@ -1,0 +1,54 @@
+server:
+  port: 8084
+  error:
+    include-message: on-param
+    whitelabel:
+      enabled: false
+
+datasource:
+  driver: org.postgresql.Driver
+  jdbcUrl: jdbc:postgresql://psql:5432/refook_metrics
+  username: superrefook
+  password: refookapp
+
+spring:
+  application:
+    name: jooq-api-and-kafka
+  datasource:
+    driver-class-name: ${datasource.driver}
+    url: ${datasource.jdbcUrl}
+    username: ${datasource.username}
+    password: ${datasource.password}
+  jooq:
+    sql-dialect: postgres
+
+  main:
+    allow-bean-definition-overriding: true
+  kafka:
+    # Адреса всех брокеров кластера
+    bootstrap-servers: kafka:29092
+    listener:
+      # Получение каждой записи должно быть подтверждено
+      ack-mode: record
+    producer:
+      client-id: ${spring.application.name}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      # Очередь для исключений
+      value-serializer: ru.refook.metrics.config.DltMessageSerializer
+      retries: 3
+    consumer:
+      group-id: ${spring.application.name}
+      autoOffsetReset: earliest
+      # Сериализаторы для всех типов
+      keyDeserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+      valueDeserializer: org.springframework.kafka.support.serializer.ErrorHandlingDeserializer
+    properties:
+      # Тип, для которого определяем конкретные сериализаторы
+      spring.json.value.default.type: ru.refook.common.dto.MetricDTO
+      spring.deserializer.key.delegate.class: org.apache.kafka.common.serialization.StringDeserializer
+      spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
+
+kafka:
+  topics:
+    view-topic: view
+    like-topic: like
