@@ -15,7 +15,7 @@ spring:
     allow-bean-definition-overriding: true
   kafka:
     # Адреса всех брокеров кластера
-   bootstrap-servers: host.docker.internal:29092
+    bootstrap-servers: host.docker.internal:29092
     listener:
       # Получение каждой записи должно быть подтверждено
       ack-mode: record
